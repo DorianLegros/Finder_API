@@ -1,0 +1,10 @@
+{
+  "name": "Semaine incubateur",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "latest",
+    "cors": "latest",
+    "body-parser": "latest",
+    "mysql": "latest"
+  }
+}
