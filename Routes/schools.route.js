@@ -5,4 +5,6 @@ const schoolController = require("./../Controllers/schools.controller");
 
 router.get("/", schoolController.get_all_schools);
 
+router.get("/:id", schoolController.get_one_school);
+
 module.exports = router;
