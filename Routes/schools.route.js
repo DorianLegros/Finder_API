@@ -11,4 +11,6 @@ router.post('/', schoolController.create_school);
 
 router.put('/:id', schoolController.put_school);
 
+router.delete('/:id', schoolController.delete_school);
+
 module.exports = router;

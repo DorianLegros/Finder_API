@@ -13,4 +13,6 @@ router.post('/', cardsController.create_card);
 
 router.put('/:id', cardsController.put_card);
 
+router.delete('/:id', cardsController.delete_card);
+
 module.exports = router;

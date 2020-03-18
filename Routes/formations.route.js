@@ -13,4 +13,6 @@ router.post('/', formationsController.create_formation);
 
 router.put('/:id', formationsController.put_formation);
 
+router.delete('/:id', formationsController.delete_formation);
+
 module.exports = router;

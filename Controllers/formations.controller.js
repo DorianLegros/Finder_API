@@ -70,3 +70,19 @@ exports.put_formation = (req, res, next) => {
         }
     });
 };
+
+exports.delete_formation = (req, res, next) => {
+    db.query('SELECT * from formations WHERE id = ' + req.params.id, function (error, results, fields) {
+        if (results.length === 0) {
+            res.status(404).send({status: 404, messages: "No formation found in the database for this ID, update failed"});
+        } else {
+            db.query('DELETE FROM formations WHERE id = ' + req.params.id, function (error, results, fields) {
+                if (error) {
+                    res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+                } else {
+                    res.status(200).send({status: 200, message: "Formation deleted"});
+                }
+            })
+        }
+    })
+};
