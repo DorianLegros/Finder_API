@@ -21,6 +21,7 @@ app.use('/cards', require("./Routes/cards.route.js"));
 app.use('/formations', require("./Routes/formations.route.js"));
 app.use('/schools', require("./Routes/schools.route.js"));
 app.use('/infos', require("./Routes/infos.route"));
+app.use('/admin', require("./Routes/admin.route"));
 
 app.use((req, res, next) => {
     const error = new Error("Route not found");
