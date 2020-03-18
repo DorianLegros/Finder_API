@@ -11,4 +11,6 @@ router.get('/byformation/:idFormation', cardsController.get_some_cards);
 
 router.post('/', cardsController.create_card);
 
+router.put('/:id', cardsController.put_card);
+
 module.exports = router;
