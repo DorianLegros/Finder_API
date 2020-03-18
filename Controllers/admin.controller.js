@@ -61,4 +61,31 @@ exports.create_admin = (req, res, next) => {
     });
 };
 
+exports.delete_admin = (req, res, next) => {
+    db.query('SELECT * from admins WHERE id = ' + req.params.id, function (error, results, fields) {
+        if (results.length === 0) {
+            res.status(404).send({status: 404, messages: "No admin found in the database for this ID, delete failed"});
+        } else {
+            db.query('DELETE FROM admins WHERE id = ' + req.params.id, function (error, results, fields) {
+                if (error) {
+                    res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+                } else {
+                    res.status(200).send({status: 200, message: "Admin deleted"});
+                }
+            })
+        }
+    })
+};
 
+exports.get_all_admins = (req, res, next) => {
+    db.query('SELECT * from admins', function (error, results, fields) {
+        if (error) {
+            res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+        }
+        else if (results.length === 0) {
+            res.status(404).send({status: 404, message: "Nothing found in the database"});
+        } else {
+            res.status(200).send(results);
+        }
+    });
+};

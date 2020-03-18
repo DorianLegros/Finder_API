@@ -61,7 +61,7 @@ exports.put_school = (req, res, next) => {
 exports.delete_school = (req, res, next) => {
     db.query('SELECT * from schools WHERE id = ' + req.params.id, function (error, results, fields) {
         if (results.length === 0) {
-            res.status(404).send({status: 404, messages: "No school found in the database for this ID, update failed"});
+            res.status(404).send({status: 404, messages: "No school found in the database for this ID, delete failed"});
         } else {
             db.query('DELETE FROM schools WHERE id = ' + req.params.id, function (error, results, fields) {
                 if (error) {
