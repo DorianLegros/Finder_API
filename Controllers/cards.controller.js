@@ -77,7 +77,7 @@ exports.put_card = (req, res, next) => {
 exports.delete_card = (req, res, next) => {
     db.query('SELECT * from cards WHERE id = ' + req.params.id, function (error, results, fields) {
         if (results.length === 0) {
-            res.status(404).send({status: 404, messages: "No card found in the database for this ID, update failed"});
+            res.status(404).send({status: 404, messages: "No card found in the database for this ID, delete failed"});
         } else {
             db.query('DELETE FROM cards WHERE id = ' + req.params.id, function (error, results, fields) {
                 if (error) {

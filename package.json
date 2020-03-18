@@ -2,9 +2,12 @@
   "name": "Semaine incubateur",
   "version": "1.0.0",
   "dependencies": {
-    "express": "latest",
-    "cors": "latest",
+    "bcrypt": "^4.0.1",
     "body-parser": "latest",
+    "cors": "latest",
+    "dotenv": "^8.2.0",
+    "express": "latest",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "latest"
   }
 }

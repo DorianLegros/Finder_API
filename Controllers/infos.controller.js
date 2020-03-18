@@ -29,7 +29,7 @@ exports.create_info = (req, res, next) => {
 exports.delete_info = (req, res, next) => {
     db.query('SELECT * from infos WHERE id = ' + req.params.id, function (error, results, fields) {
         if (results.length === 0) {
-            res.status(404).send({status: 404, messages: "No info found in the database for this ID, update failed"});
+            res.status(404).send({status: 404, messages: "No info found in the database for this ID, delete failed"});
         } else {
             db.query('DELETE FROM infos WHERE id = ' + req.params.id, function (error, results, fields) {
                 if (error) {
