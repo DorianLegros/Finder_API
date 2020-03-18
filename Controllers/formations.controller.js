@@ -38,3 +38,14 @@ exports.get_some_formations = (req, res, next) => {
         }
     })
 };
+
+exports.create_formation = (req, res, next) => {
+    db.query('INSERT INTO formations (name, school) VALUES ("' + req.body.name + '", "' + req.body.id_school +'")', function (error) {
+        if (error) {
+            res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+        }
+        else {
+            res.status(201).send({status: 201, message: "Formation created"})
+        }
+    })
+};

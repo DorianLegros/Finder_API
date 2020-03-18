@@ -38,3 +38,16 @@ exports.get_some_cards = (req, res, next) => {
         }
     })
 };
+
+exports.create_card = (req, res, next) => {
+    db.query('INSERT INTO cards (name, description, pic, formation, points) ' +
+        'VALUES ("' + req.body.name + '", "' + req.body.description + '", "' + req.body.pic + '",' +
+        '"' + req.body.id_formation + '", "' + req.body.points + '")', function (error) {
+        if (error) {
+            res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+        }
+        else {
+            res.status(201).send({status: 201, message: "Card created"})
+        }
+    })
+};

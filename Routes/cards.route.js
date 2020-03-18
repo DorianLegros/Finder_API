@@ -9,4 +9,6 @@ router.get('/:id', cardsController.get_one_card);
 
 router.get('/byformation/:idFormation', cardsController.get_some_cards);
 
+router.post('/', cardsController.create_card);
+
 module.exports = router;

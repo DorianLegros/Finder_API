@@ -9,4 +9,6 @@ router.get('/:id', formationsController.get_one_formation);
 
 router.get('/byschool/:idSchool', formationsController.get_some_formations);
 
+router.post('/', formationsController.create_formation);
+
 module.exports = router;

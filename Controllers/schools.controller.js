@@ -25,3 +25,14 @@ exports.get_one_school = (req, res, next) => {
         }
     })
 };
+
+exports.create_school = (req, res, next) => {
+    db.query('INSERT INTO schools (name) VALUES ("' + req.body.name + '")', function (error) {
+        if (error) {
+            res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
+        }
+        else {
+            res.status(201).send({status: 201, message: "School created"})
+        }
+    })
+};
