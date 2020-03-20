@@ -1,5 +1,5 @@
 {
-  "name": "Semaine incubateur",
+  "name": "semaine_incubateur",
   "version": "1.0.0",
   "dependencies": {
     "bcrypt": "^4.0.1",

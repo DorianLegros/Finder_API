@@ -14,9 +14,9 @@ exports.get_all_infos = (req, res, next) => {
 };
 
 exports.create_info = (req, res, next) => {
-    db.query('INSERT INTO infos (name, surname, age, telephone, email, last_diploma) VALUES ("' + req.body.name + '", ' +
+    db.query('INSERT INTO infos (name, surname, age, telephone, email, last_diploma, formation) VALUES ("' + req.body.name + '", ' +
         '"' + req.body.surname + '", "' + req.body.age + '",' +
-        '"' + req.body.telephone + '", "' + req.body.email + '", "' + req.body.last_diploma + '")', function (error) {
+        '"' + req.body.telephone + '", "' + req.body.email + '", "' + req.body.last_diploma + '", "' + req.body.id_formation + '")', function (error) {
         if (error) {
             res.status(500).send({status: 500, message: "Something went wrong, please verify if you're sending a valid request"});
         }
